@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+}
+
+#board {
+  width:960px;
+  height: 960px;
+  background-color: blue;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  border: 5px black solid;
+}
