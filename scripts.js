@@ -6,7 +6,9 @@ function createPixel(pixelSize) {
   let pixel = document.createElement("div");
   pixel.style.height = `${pixelSize}px`;
   pixel.style.width = `${pixelSize}px`;
-  pixel.style.backgroundColor = "black";
+  pixel.addEventListener("mouseover",() => {
+    pixel.style.backgroundColor = "black";
+  }, { once: true });
 
   return pixel;
 }

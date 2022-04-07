@@ -5,7 +5,7 @@ h1 {
 #board {
   width:960px;
   height: 960px;
-  background-color: blue;
+  background-color: white;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
