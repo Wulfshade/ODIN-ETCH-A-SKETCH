@@ -4,15 +4,19 @@ function createPixel(pixelSize) {
   pixel.style.height = `${pixelSize}px`;
   pixel.style.width = `${pixelSize}px`;
   pixel.style.backgroundColor = "rgba(0,0,0,0)";
-  pixel.addEventListener("mouseover", (e) => {
-    let target = e.target;
-    let bgCol = target.style.backgroundColor;
-    let alpha = parseFloat(bgCol.split(',')[3]);
-     if (alpha < 1.0) target.style.backgroundColor = `rgba(0,0,0,${alpha + 0.1})`;
-    console.log(e.target.style.backgroundColor);
-  });
-
+  pixel.addEventListener("mouseover", stylePixel);
   return pixel;
+}
+
+function stylePixel(e) {
+  let target = e.target;
+  let bgCol = target.style.backgroundColor;
+  let alpha = parseFloat(bgCol.split(',')[3]);
+   if (alpha < 1.0) {
+    target.style.backgroundColor = `rgba(0,0,0,${alpha + 0.1})`;
+   } else {
+     target.removeEventListener("mouseover", stylePixel);
+   }
 }
 
 function initializeBoard(gridSize) {
