@@ -2,6 +2,20 @@ h1 {
   text-align: center;
 }
 
+.container {
+  width: 970px;
+  margin: auto;
+}
+
+.reset {
+  float: right;
+  background-color: black;
+  border-width: 0;
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
 #board {
   width:960px;
   height: 960px;
