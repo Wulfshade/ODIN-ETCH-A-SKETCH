@@ -3,9 +3,14 @@ function createPixel(pixelSize) {
   pixel.classList.add("pixel");
   pixel.style.height = `${pixelSize}px`;
   pixel.style.width = `${pixelSize}px`;
-  pixel.addEventListener("mouseover", () => {
-    pixel.style.backgroundColor = "black";
-  }, { once: true });
+  pixel.style.backgroundColor = "rgba(0,0,0,0)";
+  pixel.addEventListener("mouseover", (e) => {
+    let target = e.target;
+    let bgCol = target.style.backgroundColor;
+    let alpha = parseFloat(bgCol.split(',')[3]);
+     if (alpha < 1.0) target.style.backgroundColor = `rgba(0,0,0,${alpha + 0.1})`;
+    console.log(e.target.style.backgroundColor);
+  });
 
   return pixel;
 }
